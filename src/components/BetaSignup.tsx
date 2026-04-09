@@ -16,7 +16,7 @@ export default function BetaSignup() {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch("https://formspree.io/f/xpwdgkjq", {
+      const response = await fetch("https://formspree.io/f/mbdpedqd", {
         method: "POST",
         body: formData,
         headers: {

@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.DS_Store
+.playwright-cli/page-2026-04-08T03-26-39-505Z.yml
+.playwright-cli/page-2026-04-08T03-28-04-737Z.yml
