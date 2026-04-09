@@ -5,10 +5,10 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "How it works", href: "#how-it-works" },
-  { label: "FAQ", href: "#faq" },
+  { label: "How it works", href: "/#how-it-works" },
+  { label: "FAQ", href: "/#faq" },
   { label: "Privacy", href: "/privacy" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Header() {
@@ -24,31 +24,21 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
-          {navLinks.map((link) =>
-            link.href.startsWith("/") ? (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-sm font-medium text-stone-600 transition-colors hover:text-teal-600 dark:text-stone-400 dark:hover:text-teal-400"
-              >
-                {link.label}
-              </Link>
-            ) : (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-sm font-medium text-stone-600 transition-colors hover:text-teal-600 dark:text-stone-400 dark:hover:text-teal-400"
-              >
-                {link.label}
-              </a>
-            )
-          )}
-          <a
-            href="#beta"
+          {navLinks.map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              className="text-sm font-medium text-stone-600 transition-colors hover:text-teal-600 dark:text-stone-400 dark:hover:text-teal-400"
+            >
+              {link.label}
+            </Link>
+          ))}
+          <Link
+            href="/#beta"
             className="rounded-xl bg-teal-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-teal-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
           >
             Join beta
-          </a>
+          </Link>
         </nav>
 
         {/* Mobile hamburger */}
@@ -71,34 +61,23 @@ export default function Header() {
           aria-label="Mobile navigation"
         >
           <div className="flex flex-col gap-4">
-            {navLinks.map((link) =>
-              link.href.startsWith("/") ? (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className="text-base font-medium text-stone-700 transition-colors hover:text-teal-600 dark:text-stone-300 dark:hover:text-teal-400"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ) : (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-base font-medium text-stone-700 transition-colors hover:text-teal-600 dark:text-stone-300 dark:hover:text-teal-400"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {link.label}
-                </a>
-              )
-            )}
-            <a
-              href="#beta"
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="text-base font-medium text-stone-700 transition-colors hover:text-teal-600 dark:text-stone-300 dark:hover:text-teal-400"
+                onClick={() => setMobileOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link
+              href="/#beta"
               className="mt-2 inline-block rounded-xl bg-teal-600 px-5 py-2.5 text-center text-sm font-semibold text-white transition-colors hover:bg-teal-700"
               onClick={() => setMobileOpen(false)}
             >
               Join beta
-            </a>
+            </Link>
           </div>
         </nav>
       )}

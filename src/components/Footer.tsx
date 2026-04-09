@@ -3,10 +3,10 @@ import ScrollReveal from "./ScrollReveal";
 
 const links = [
   { label: "Home", href: "/" },
-  { label: "FAQ", href: "#faq" },
+  { label: "FAQ", href: "/#faq" },
   { label: "Privacy Policy", href: "/privacy" },
   { label: "Terms of Use", href: "/terms" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Footer() {
@@ -25,25 +25,15 @@ export default function Footer() {
 
             {/* Links */}
             <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 sm:justify-end" aria-label="Footer navigation">
-              {links.map((link) =>
-                link.href.startsWith("/") ? (
-                  <Link
-                    key={link.label}
-                    href={link.href}
-                    className="text-sm text-stone-500 transition-colors hover:text-teal-600 dark:text-stone-400 dark:hover:text-teal-400"
-                  >
-                    {link.label}
-                  </Link>
-                ) : (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    className="text-sm text-stone-500 transition-colors hover:text-teal-600 dark:text-stone-400 dark:hover:text-teal-400"
-                  >
-                    {link.label}
-                  </a>
-                )
-              )}
+              {links.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="text-sm text-stone-500 transition-colors hover:text-teal-600 dark:text-stone-400 dark:hover:text-teal-400"
+                >
+                  {link.label}
+                </Link>
+              ))}
             </nav>
           </div>
 
