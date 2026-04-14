@@ -23,10 +23,10 @@ export default function Header() {
           <Image
             src="/logo-horizontal.png"
             alt="StayOnTop"
-            width={2822}
-            height={574}
+            width={1621}
+            height={463}
             priority
-            className="h-20 w-auto"
+            className="h-[3.645rem] w-auto"
           />
         </Link>
 
