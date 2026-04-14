@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
@@ -16,10 +17,17 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-stone-200 bg-white/95 backdrop-blur-sm dark:border-stone-700 dark:bg-stone-950/95">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        {/* Wordmark */}
-        <Link href="/" className="text-xl font-bold tracking-tight text-stone-900 dark:text-stone-50">
-          StayOnTop
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
+        {/* Logo */}
+        <Link href="/" className="flex items-center" aria-label="StayOnTop home">
+          <Image
+            src="/logo-horizontal.png"
+            alt="StayOnTop"
+            width={2822}
+            height={574}
+            priority
+            className="h-20 w-auto"
+          />
         </Link>
 
         {/* Desktop nav */}
